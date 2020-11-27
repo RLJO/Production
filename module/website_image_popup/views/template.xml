@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_frontend" inherit_id="website.assets_frontend" name="Image zoom on click" customize_show="False">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/website_image_popup/static/src/js/imagelightbox.js"></script>
+                <script type="text/javascript" src="/website_image_popup/static/src/js/website_image_popup.js"></script>
+                <link rel='stylesheet' href='/website_image_popup/static/src/css/website_image_popup.css'></link>
+                <script type="text/javascript" src="/website_image_popup/static/src/js/website_image_popup_editor.js"></script>
+            </xpath>
+        </template>
+        
+        <template id="s_image_popup_options" inherit_id="web_editor.snippet_options">
+            <xpath expr="//div[@data-js='ImageOptimize']" position="before">
+                <div data-js="popup_snippet" data-selector="img">
+                     <we-button-group string="Set Popup" title="Set Image Popup">
+                        <a href="#" class="add-magnify fa fa-expand btn" style="font-size: 11px;color:#d4d5d7;"><font style="color:#d4d5d7;margin-left:10px;">Popup</font></a>
+                        <a href="#" class="remove-magnify fa fa-refresh btn" style="font-size: 11px;color:#d4d5d7;"><font style="color:#d4d5d7;margin-left:10px;">Reset Popup</font></a>
+                     </we-button-group>
+                </div>
+             </xpath>
+        </template>
+    </data>
+</odoo>
+
