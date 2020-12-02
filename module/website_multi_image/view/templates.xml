@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Website Product Multi Image">
+      <xpath expr="." position="inside">
+        <script type="text/javascript" src="/website_multi_image/static/src/js/owl-carousel/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="/website_multi_image/static/src/js/website_multi_image.js"></script>
+        <link rel='stylesheet' href='/website_multi_image/static/src/js/owl-carousel/owl.carousel.css' />
+        <link rel='stylesheet' href='/website_multi_image/static/src/css/website_multi_image.css' />
+      </xpath>
+    </template>
+
+    <template id="shop_product_carousel_inherited" inherit_id="website_sale.shop_product_carousel">
+      <xpath expr="//t[@t-foreach='product_images']//div" position="attributes">
+        <attribute name="t-att-value">product_image.id</attribute>
+      </xpath>
+
+      <xpath expr="//ol[@t-if='len(product_images) > 1']//li" position="attributes">
+        <attribute name="t-att-value">product_image.id</attribute>
+      </xpath>
+
+      <xpath expr="//div[@t-ignore='True']/ol" position="attributes">
+        <attribute name="class">carousel-indicators owl owl-carousel owl-theme carousel-indicators d-inline-block position-static mx-auto</attribute>
+      </xpath>
+    </template>
+  </data>
+</odoo>
