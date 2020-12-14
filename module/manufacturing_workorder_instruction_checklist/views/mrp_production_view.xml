@@ -1,0 +1,84 @@
+<odoo>
+    <data>
+        <record id="view_mrp_production_inherited_status" model="ir.ui.view">
+            <field name="name">view.mrp.production.inherited.status</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[last()]" position="after">
+                    <page string="Instructions and Checklists">
+                        <group string="Instructions">
+                            <field name="custom_mrp_instruction_ids" nolabel='1'/>
+                        </group>
+                        <group string="Checklists">
+                            <field name="custom_mrp_checklist_status_ids" nolabel='1'>
+                                <tree editable="bottom">
+                                    <field name="mrp_checklist_id"/>
+                                    <field name="comment"/>
+                                    <field name="state"/>
+                                    <button string="Reset" type="object" name="custom_action_reset_draft" states="pass,fail" class="btn-primary"/>
+                                    <button string="Pass" type="object" name="custom_action_pass" states="draft" class="btn-primary"/>
+                                    <button string="Fail" type="object" name="custom_action_fail" states="draft" class="btn-primary"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="mrp_work_order_form_view_inherited_timesheets" model="ir.ui.view">
+            <field name="name">mrp.work.order.form.view.inherited.timesheets</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[last()]" position="after">
+                         <page string="Instructions and Checklists">
+                            <group string="Instructions">
+                                <field name="workorder_instruction_ids" nolabel='1'/>
+                            </group>
+                            <group string="Checklists">
+                                   <field name="workorder_checklist_status_ids" nolabel='1'>
+                                        <tree editable="bottom">
+                                            <field name="workorder_checklist_id"/>
+                                            <field name="comment"/>
+                                            <field name="state"/>
+                                            <button string="Reset" type="object" name="custom_action_reset_draft" states="pass,fail" class="btn-primary"/>
+                                            <button string="Pass" type="object" name="custom_action_pass" states="draft" class="btn-primary"/>
+                                            <button string="Fail" type="object" name="custom_action_fail" states="draft" class="btn-primary"/>
+                                        </tree>
+                                    </field>
+                            </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+       <!--  <record id="mrp_routing_form_view_inherited_filed" model="ir.ui.view">
+            <field name="name">mrp.routing.form.view.inherited.filed</field>
+            <field name="model">mrp.routing</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='operation_ids']" position="inside">
+                    <field name="custom_workorder_instruction_ids" widget="many2many_tags"/>
+                    <field name="custom_workorder_checklist_ids" widget="many2many_tags"/>
+                </xpath>
+            </field>
+        </record> -->
+        <record id="mrp_routing_workcenter_form_view_inherited_filed" model="ir.ui.view">
+            <field name="name">mrp.routing.workcenter.form.view.inherited.filed</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[last()]" position="after">
+                     <page string="Workorder Instructions and Checklists">
+                        <group string="Workorder Instructions">
+                            <field name="custom_workorder_instruction_ids" nolabel='1'/>
+                        </group>
+                        <group string="Workorder Checklists">
+                              <field name="custom_workorder_checklist_ids" nolabel='1'/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

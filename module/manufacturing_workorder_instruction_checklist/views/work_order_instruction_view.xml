@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+    	<record id="work_order_instruction_form_view" model="ir.ui.view">
+            <field name="name">work.order.instruction.form.view</field>
+            <field name="model">work.order.instruction</field>
+            <field name="arch" type="xml">
+                <form name="">
+                    <sheet>
+                        <group name="WorkOrder Instruction">
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="work_order_instruction_tree_view" model="ir.ui.view">
+            <field name="name">work.order.tree.view</field>
+            <field name="model">work.order.instruction</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_work_order_instruction" model="ir.actions.act_window">
+            <field name="name">WorkOrder Instructions</field>
+            <field name="res_model">work.order.instruction</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_work_order_instruction" name="WorkOrder Instructions" action="action_work_order_instruction" parent="mrp.menu_mrp_configuration"/>
+    </data>
+</odoo>

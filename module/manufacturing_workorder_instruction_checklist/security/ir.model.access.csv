@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp_instruction,access.mrp.instruction,model_mrp_instruction,mrp.group_mrp_manager,1,1,1,1
+access_mrp_instruction_custom,access.mrp.instruction.custom,model_mrp_instruction,base.group_user,1,0,0,0
+access_mrp_checklist,access.mrp.checklist,model_mrp_checklist,mrp.group_mrp_manager,1,1,1,1
+access_mrp_checklist_custom,access.mrp.checklist.custom,model_mrp_checklist,base.group_user,1,0,0,0
+access_mrp_checklist_status,access.mrp.checklist.status,model_mrp_checklist_status,mrp.group_mrp_user,1,1,1,1
+access_mrp_checklist_status_custom,access.mrp.checklist.status.custom,model_mrp_checklist_status,base.group_user,1,1,1,0
+access_work_order_instruction,access.work.order.instruction,model_work_order_instruction,mrp.group_mrp_manager,1,1,1,1
+access_work_order_instruction_custom,access.work.order.instruction.custom,model_work_order_instruction,base.group_user,1,0,0,0
+access_work_order_checklist,access.work.order.checklist,model_work_order_checklist,mrp.group_mrp_manager,1,1,1,1
+access_work_order_checklist_custom,access.work.order.checklist.custom,model_work_order_checklist,base.group_user,1,0,0,0
+access_work_order_checklist_status,access.work.order.checklist.status,model_workorder_checklist_status,mrp.group_mrp_user,1,1,1,1
+access_work_order_checklist_status_custom,access.work.order.checklist.status.custom,model_workorder_checklist_status,base.group_user,1,1,1,0

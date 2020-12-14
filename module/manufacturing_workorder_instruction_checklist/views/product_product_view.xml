@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record id="product_product_form_view_inherit" model="ir.ui.view">
+            <field name="name">product.product.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[last()]" position="after">
+                         <page string="Manufacturing Instructions and Checklists">
+                            <group string="Manufacturing Instructions">
+                                <field name="custom_instruction_ids" attrs="{'invisible': [('bom_count', '=', 0)]}" nolabel='1'/>
+                            </group>
+                            <group string="Manufacturing Checklists">
+                                  <field name="custom_checklist_ids" attrs="{'invisible': [('bom_count', '=', 0)]}" nolabel='1'/>
+                            </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
