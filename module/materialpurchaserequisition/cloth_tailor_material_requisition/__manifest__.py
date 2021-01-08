@@ -4,7 +4,7 @@
 
 {
     'name': 'Material Requisitions for Cloth Request',
-    'version': '1.2.1',
+    'version': '1.3.1',
     'price': 49.0,
     'currency': 'EUR',
     'license': 'Other proprietary',

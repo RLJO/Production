@@ -60,7 +60,8 @@ class ClothRequestMaterialRequisition(models.TransientModel):
                     'description': line.description,
                     'qty': line.qty,
                     'uom': line.uom.id,
-                    'requisition_type': line.requisition_type
+                    'requisition_type': line.requisition_type,
+                    'custom_line_id': line.id,
                     })
                 vals_list.append(lines)
         action = self.env.ref('material_purchase_requisitions.action_material_purchase_requisition').read()[0]
